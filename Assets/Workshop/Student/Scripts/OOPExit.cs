@@ -14,8 +14,12 @@ namespace Solution
         public override bool Hit()
         {
             // ตรวจสอบว่าผู้เล่นมีไอเท็มที่ต้องการหรือไม่
-            YouWin.SetActive(true);
-            Debug.Log("You win");
+            var keyAmout = mapGenerator.player.inventory.GetItemCount("Key");
+            if (keyAmout >= 2)
+            {
+                YouWin.SetActive(true);
+                Debug.Log("You win");
+            }
             return true;
           
         }
